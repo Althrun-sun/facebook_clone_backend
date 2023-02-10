@@ -24,7 +24,7 @@ public class PostController {
 
     @PostMapping
     public Post addPost(@RequestParam Map<String,String> requestParams
-                        ) throws Exception {
+    ) throws Exception {
         String strPost = requestParams.get("post");
         String email = requestParams.get("email");
         String name = requestParams.get("name");

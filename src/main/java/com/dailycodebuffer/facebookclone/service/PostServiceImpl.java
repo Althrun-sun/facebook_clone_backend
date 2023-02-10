@@ -17,7 +17,7 @@ public class PostServiceImpl implements PostService {
 
 
     private PostRepository postRepository;
-//    public PostServiceImpl(PostRepository postRepository){
+    //    public PostServiceImpl(PostRepository postRepository){
 //        this.postRepository = postRepository;
 //    }
     private PostEntityRepository postEntityRepository;
@@ -59,15 +59,15 @@ public class PostServiceImpl implements PostService {
         List<Post> posts = new ArrayList<>();
         posts = postEntities.stream()
                 .map((postEntity) ->
-                    Post.builder()
-                            .id(postEntity.getId())
-                            .timeStamp(postEntity.getTimeStamp())
-                            .email(postEntity.getEmail())
-                            .name(postEntity.getName())
-                            .post(postEntity.getPost())
-                            .image(postEntity.getImage())
-                            .profilePic(postEntity.getProfilePic())
-                            .build()
+                        Post.builder()
+                                .id(postEntity.getId())
+                                .timeStamp(postEntity.getTimeStamp())
+                                .email(postEntity.getEmail())
+                                .name(postEntity.getName())
+                                .post(postEntity.getPost())
+                                .image(postEntity.getImage())
+                                .profilePic(postEntity.getProfilePic())
+                                .build()
                 ).collect(Collectors.toList());
         return posts;
     }
