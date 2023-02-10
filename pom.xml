@@ -5,16 +5,16 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.4</version>
+        <version>3.0.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.dailycodebuffer</groupId>
+    <groupId>com.althrun</groupId>
     <artifactId>facebook_clone_backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>facebook-clone-service</name>
-    <description>facebook-clone-service</description>
+    <name>facebook_clone_backend</name>
+    <description>facebook_clone_backend</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>19</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -27,8 +27,8 @@
         </dependency>
 
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
