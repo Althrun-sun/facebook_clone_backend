@@ -2,10 +2,12 @@ package com.dailycodebuffer.facebookclone.controller;
 
 import com.dailycodebuffer.facebookclone.model.Post;
 import com.dailycodebuffer.facebookclone.service.PostService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +16,7 @@ import java.util.Map;
 @RequestMapping("/api/v1/post")
 public class PostController {
 
-    private PostService postService;
+    private final PostService postService;
 
     public PostController(PostService postService) {
         this.postService = postService;
@@ -44,5 +46,14 @@ public class PostController {
     @GetMapping
     public List<Post> getPost() {
         return postService.getPost();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String,Boolean>> deletePost(@PathVariable String id){
+        boolean deleted =false;
+        deleted = postService.deletePost(id);
+        Map<String,Boolean> response = new HashMap<>();
+        response.put("deleted",deleted);
+        return ResponseEntity.ok(response);
     }
 }

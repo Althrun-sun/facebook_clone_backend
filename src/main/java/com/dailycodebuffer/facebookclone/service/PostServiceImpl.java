@@ -3,6 +3,7 @@ package com.dailycodebuffer.facebookclone.service;
 import com.dailycodebuffer.facebookclone.entity.PostEntity;
 import com.dailycodebuffer.facebookclone.model.Post;
 import com.dailycodebuffer.facebookclone.repository.PostEntityRepository;
+import com.dailycodebuffer.facebookclone.repository.PostRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
@@ -14,11 +15,18 @@ import java.util.stream.Collectors;
 @Service
 public class PostServiceImpl implements PostService {
 
+
+    private PostRepository postRepository;
+//    public PostServiceImpl(PostRepository postRepository){
+//        this.postRepository = postRepository;
+//    }
     private PostEntityRepository postEntityRepository;
 
-    public PostServiceImpl(PostEntityRepository postEntityRepository) {
+    public PostServiceImpl(PostEntityRepository postEntityRepository,PostRepository postRepository) {
         this.postEntityRepository = postEntityRepository;
+        this.postRepository = postRepository;
     }
+
 
     @Override
     public Post addPost(Post post) throws Exception {
@@ -62,6 +70,14 @@ public class PostServiceImpl implements PostService {
                             .build()
                 ).collect(Collectors.toList());
         return posts;
+    }
+
+
+    @Override
+    public boolean deletePost(String id) {
+        PostEntity post = postRepository.findById(id).get();
+        postRepository.delete(post);
+        return true;
     }
 
 
