@@ -1,18 +1,19 @@
-package com.althrun.facebook_clone_backend.controller;
+package com.dailycodebuffer.facebookclone.controller;
 
-import com.althrun.facebook_clone_backend.model.Post;
-import com.althrun.facebook_clone_backend.service.PostService;
-import com.fasterxml.jackson.databind.DatabindException;
+import com.dailycodebuffer.facebookclone.model.Post;
+import com.dailycodebuffer.facebookclone.service.PostService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 @CrossOrigin(value = "http://localhost:3000")
-@RequestMapping("/api/v1/post")
 @RestController
+@RequestMapping("/api/v1/post")
 public class PostController {
+
     private PostService postService;
 
     public PostController(PostService postService) {
@@ -20,8 +21,9 @@ public class PostController {
     }
 
     @PostMapping
-    public Post addPost(@RequestParam Map<String,String> requestParams) throws Exception {
-        String strpost = requestParams.get("post");
+    public Post addPost(@RequestParam Map<String,String> requestParams
+                        ) throws Exception {
+        String strPost = requestParams.get("post");
         String email = requestParams.get("email");
         String name = requestParams.get("name");
         String file = requestParams.get("file");
@@ -31,16 +33,16 @@ public class PostController {
                 .file(file)
                 .name(name)
                 .email(email)
-                .post(strpost)
+                .post(strPost)
                 .profilePic(profilePic)
                 .timeStamp(new Date().toString())
                 .build();
         post = postService.addPost(post);
         return post;
     }
-    @GetMapping
-    public List<Post> getPost(){
-        return postService.getPost();
 
+    @GetMapping
+    public List<Post> getPost() {
+        return postService.getPost();
     }
 }

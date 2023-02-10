@@ -1,10 +1,10 @@
-package com.althrun.facebook_clone_backend;
+package com.dailycodebuffer.facebookclone;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FacebookCloneBackendApplicationTests {
+class FacebookCloneServiceApplicationTests {
 
     @Test
     void contextLoads() {

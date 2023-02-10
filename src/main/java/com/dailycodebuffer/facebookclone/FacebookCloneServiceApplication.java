@@ -1,13 +1,13 @@
-package com.althrun.facebook_clone_backend;
+package com.dailycodebuffer.facebookclone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FacebookCloneBackendApplication {
+public class FacebookCloneServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FacebookCloneBackendApplication.class, args);
+        SpringApplication.run(FacebookCloneServiceApplication.class, args);
     }
 
 }
