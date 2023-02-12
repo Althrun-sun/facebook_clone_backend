@@ -13,4 +13,8 @@ public interface PostService {
 
 
     boolean deletePost(String id);
+
+    Post getPostById(String id);
+
+    Post updatePost(String id, Post post);
 }

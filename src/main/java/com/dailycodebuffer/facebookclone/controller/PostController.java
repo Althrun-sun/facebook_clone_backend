@@ -56,4 +56,15 @@ public class PostController {
         response.put("deleted",deleted);
         return ResponseEntity.ok(response);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Post> getPostById(@PathVariable String id){
+        Post post = null;
+        post =postService.getPostById(id);
+        return ResponseEntity.ok(post);
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<Post> updatePost(@PathVariable String id,@RequestBody Post post){
+        post = postService.updatePost(id,post);
+        return ResponseEntity.ok(post);
+    }
 }

@@ -6,7 +6,6 @@ import com.dailycodebuffer.facebookclone.repository.PostEntityRepository;
 import com.dailycodebuffer.facebookclone.repository.PostRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Base64Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +77,23 @@ public class PostServiceImpl implements PostService {
         PostEntity post = postRepository.findById(id).get();
         postRepository.delete(post);
         return true;
+    }
+
+    @Override
+    public Post getPostById(String id) {
+        PostEntity postEntity = postEntityRepository.findById(id).get();
+        Post post = new Post();
+        BeanUtils.copyProperties(postEntity,post);
+        return post;
+    }
+
+    @Override
+    public Post updatePost(String id, Post post) {
+        PostEntity postEntity = postEntityRepository.findById(id).get();
+        postEntity.setPost(post.getPost());
+//        postEntity.setImage(post.getImage());
+        postEntityRepository.save(postEntity);
+        return post;
     }
 
 
