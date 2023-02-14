@@ -1,6 +1,6 @@
-package com.dailycodebuffer.facebookclone.service;
+package com.althrunsun.facebookclone.service;
 
-import com.dailycodebuffer.facebookclone.model.Post;
+import com.althrunsun.facebookclone.model.Post;
 
 import java.util.List;
 

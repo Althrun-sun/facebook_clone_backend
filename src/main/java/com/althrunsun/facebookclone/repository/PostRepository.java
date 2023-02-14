@@ -1,6 +1,6 @@
-package com.dailycodebuffer.facebookclone.repository;
+package com.althrunsun.facebookclone.repository;
 
-import com.dailycodebuffer.facebookclone.entity.PostEntity;
+import com.althrunsun.facebookclone.entity.PostEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

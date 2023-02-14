@@ -1,9 +1,9 @@
-package com.dailycodebuffer.facebookclone.service;
+package com.althrunsun.facebookclone.service;
 
-import com.dailycodebuffer.facebookclone.entity.PostEntity;
-import com.dailycodebuffer.facebookclone.model.Post;
-import com.dailycodebuffer.facebookclone.repository.PostEntityRepository;
-import com.dailycodebuffer.facebookclone.repository.PostRepository;
+import com.althrunsun.facebookclone.entity.PostEntity;
+import com.althrunsun.facebookclone.model.Post;
+import com.althrunsun.facebookclone.repository.PostEntityRepository;
+import com.althrunsun.facebookclone.repository.PostRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 

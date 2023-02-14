@@ -1,4 +1,4 @@
-package com.dailycodebuffer.facebookclone;
+package com.althrunsun.facebookclone;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

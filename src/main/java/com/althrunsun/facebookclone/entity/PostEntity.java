@@ -1,24 +1,34 @@
-package com.dailycodebuffer.facebookclone.model;
+package com.althrunsun.facebookclone.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.multipart.MultipartFile;
+import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+@Table(name = "posts")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post {
+public class PostEntity {
 
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
+    @Lob
     private String post;
     private String name;
     private String email;
+
+    @Lob
     private String image;
-    private String file;
     private String profilePic;
     private String timeStamp;
     private String imageName;

@@ -1,10 +1,9 @@
-package com.dailycodebuffer.facebookclone.controller;
+package com.althrunsun.facebookclone.controller;
 
-import com.dailycodebuffer.facebookclone.model.Post;
-import com.dailycodebuffer.facebookclone.service.PostService;
+import com.althrunsun.facebookclone.model.Post;
+import com.althrunsun.facebookclone.service.PostService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 import java.util.HashMap;
